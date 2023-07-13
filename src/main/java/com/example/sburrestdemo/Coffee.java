@@ -2,7 +2,14 @@ package com.example.sburrestdemo;
 
 import java.util.UUID;
 
+import org.springframework.data.repository.CrudRepository;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 class Coffee {
+	@Id
 	private final String id;
 	private String name;
 
@@ -27,3 +34,5 @@ class Coffee {
 		this.name = name;
 	}
 }
+
+interface CoffeeRepository extends CrudRepository<Coffee, String> {}
